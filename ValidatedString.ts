@@ -3,7 +3,13 @@
  */
 interface ValidatedStringFactory<ValidatorT>
 {
+    /**
+     The `try()` method returns the validated string if it's valid, or `undefined` if it isn't.
+     */
     try(value: string): ValidatedString<ValidatorT> | undefined;
+    /**
+     The `assert()` method returns the validated string if it's valid, or throws an `Error` if it isn't. Not that the error message will contain the string `value` supplied, so take precautions if `value` is sensitive.
+     */
     assert(value: string): ValidatedString<ValidatorT>;
 }
 
