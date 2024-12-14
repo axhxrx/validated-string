@@ -39,7 +39,6 @@ Deno.test('LowercaseAlphabeticString - assert throws with descriptive message', 
 
 Deno.test('LowercaseAlphabeticString - type safety', () =>
 {
-  // This would cause a TypeScript error if uncommented:
   // @ts-expect-error Type 'string' is not assignable to type 'LowercaseAlphabeticString'
   const _invalid: LowercaseAlphabeticString = 'ABC';
 

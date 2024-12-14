@@ -48,7 +48,6 @@ Deno.test('AlphabeticString - assert throws with descriptive message', () =>
 
 Deno.test('AlphabeticString - type safety', () =>
 {
-  // This would cause a TypeScript error if uncommented:
   // @ts-expect-error Type 'string' is not assignable to type 'AlphabeticString'
   const _invalid: AlphabeticString = 'Hello123';
 
