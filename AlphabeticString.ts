@@ -1,6 +1,6 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isAlphabetic = (s: string) => /^[a-zA-Z]+$/.test(s);
+const isAlphabetic = (s: string): boolean => /^[a-zA-Z]+$/.test(s);
 
 const { factory, type } = ValidatedString.create(isAlphabetic, {
   name: 'AlphabeticString',

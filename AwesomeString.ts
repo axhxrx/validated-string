@@ -1,6 +1,6 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isAwesome = (s: string) => s === 'awesome';
+const isAwesome = (s: string): boolean => s === 'awesome';
 
 const { factory, type } = ValidatedString.create(isAwesome);
 export type AwesomeString = typeof type;

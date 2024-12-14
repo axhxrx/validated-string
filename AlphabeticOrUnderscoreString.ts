@@ -1,6 +1,6 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isAlphabeticOrUnderscore = (s: string) => /^[a-zA-Z_]+$/.test(s);
+const isAlphabeticOrUnderscore = (s: string): boolean => /^[a-zA-Z_]+$/.test(s);
 
 const { factory, type } = ValidatedString.create(isAlphabeticOrUnderscore, {
   name: 'AlphabeticOrUnderscoreString',

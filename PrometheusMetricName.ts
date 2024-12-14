@@ -1,6 +1,6 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isPrometheusMetricName = (s: string) => /^[a-zA-Z_:][a-zA-Z0-9_:]*$/.test(s);
+const isPrometheusMetricName = (s: string): boolean => /^[a-zA-Z_:][a-zA-Z0-9_:]*$/.test(s);
 
 const { factory, type } = ValidatedString.create(isPrometheusMetricName, {
   name: 'PrometheusMetricName',

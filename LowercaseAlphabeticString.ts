@@ -1,6 +1,6 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isLowercaseAlpha = (s: string) => /^[a-z]+$/.test(s);
+const isLowercaseAlpha = (s: string): boolean => /^[a-z]+$/.test(s);
 
 const { factory, type } = ValidatedString.create(isLowercaseAlpha, {
   name: 'LowercaseAlphabeticString',
