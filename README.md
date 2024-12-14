@@ -46,7 +46,7 @@ function callCow(cowName: CowName)
 
 class FarmOperatorConsole
 {
-  callCow()
+  validateAndCallCow()
   {
     console.log('Enter the cow name you wish to call:');
     const cowName = getOperatorInput(); // string
@@ -60,7 +60,7 @@ class FarmOperatorConsole
     else
     {
       console.log('Invalid cow name. Please try again.');
-      this.callCow();
+      this.validateAndCallCow();
     }
   }
 }
