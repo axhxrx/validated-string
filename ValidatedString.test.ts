@@ -72,7 +72,7 @@ Deno.test('ValidatedString - type safety', () =>
 
   // This line would cause a TypeScript compilation error if uncommented:
   // @ts-expect-error Type 'string' is not assignable to type 'HelloString'.
-  const _invalid: HelloString = "hi";
+  const _invalid: HelloString = 'hi';
 
   const valid: HelloString = factory.assert('hello');
   assertEquals(valid, 'hello');

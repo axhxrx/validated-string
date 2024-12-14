@@ -62,6 +62,8 @@ Deno.test('AlphabeticOrUnderscoreOrHyphenString - type safety', () =>
   // @ts-expect-error Type 'string' is not assignable to type 'AlphabeticOrUnderscoreOrHyphenString'
   const _invalid: AlphabeticOrUnderscoreOrHyphenString = 'Hello.World';
 
-  const valid: AlphabeticOrUnderscoreOrHyphenString = AlphabeticOrUnderscoreOrHyphenString.assert('Hello-World_Example');
+  const valid: AlphabeticOrUnderscoreOrHyphenString = AlphabeticOrUnderscoreOrHyphenString.assert(
+    'Hello-World_Example',
+  );
   assertEquals(valid, 'Hello-World_Example');
 });

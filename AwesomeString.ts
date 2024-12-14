@@ -1,4 +1,4 @@
-import { ValidatedString } from "./ValidatedString.ts";
+import { ValidatedString } from './ValidatedString.ts';
 
 const isAwesome = (s: string) => s === 'awesome';
 
@@ -19,10 +19,10 @@ console.log('z is ', z);
 
 try
 {
-    const ohno = AwesomeString.assert('not awesome');
-    console.log('ohno is ', ohno);
+  const ohno = AwesomeString.assert('not awesome');
+  console.log('ohno is ', ohno);
 }
 catch (error)
 {
-    console.log('Got error as expected:', error);
+  console.log('Got error as expected:', error);
 }

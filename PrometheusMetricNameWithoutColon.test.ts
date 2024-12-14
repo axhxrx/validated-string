@@ -8,16 +8,16 @@ Deno.test('PrometheusMetricNameWithoutColon - validates standard Prometheus metr
     'http_requests_total',
     'prometheus_http_requests_total',
     'process_cpu_seconds_total',
-    
+
     // With numbers (but not leading)
     'http_2xx_requests_total',
     'tcp_port_8080_connections',
-    
+
     // With underscores
     '_leading_underscore',
     'trailing_underscore_',
     'multiple__underscores',
-    
+
     // Single character
     'a',
     '_',
@@ -38,11 +38,11 @@ Deno.test('PrometheusMetricNameWithoutColon - rejects invalid metric names', () 
     ':leading_colon',
     'trailing_colon:',
     'multiple::colons',
-    
+
     // Invalid starts
     '1_metric', // starts with number
     '123abc', // starts with number
-    
+
     // Invalid characters
     'http-requests-total', // hyphens not allowed
     'http.requests.total', // dots not allowed
@@ -50,10 +50,10 @@ Deno.test('PrometheusMetricNameWithoutColon - rejects invalid metric names', () 
     'http$requests', // special characters
     'metric/sec', // slashes
     'metric@host', // at symbol
-    
+
     // Empty
     '',
-    
+
     // Unicode/emoji
     'http_requests_😀',
     'métric_name',
