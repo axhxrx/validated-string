@@ -1,7 +1,7 @@
 /**
- An interface for factories that create validated strings. Consumers of this library shouldn't need to use it directly.
+ An interface for factories that create validated strings. Consumers of this library shouldn't need to use it directly. However, it's required for the public API due to JSR ['slow types; restrictions](https://jsr.io/docs/about-slow-types#no-destructuring-in-exports) — see https://github.com/axhxrx/validated-string/issues/1
  */
-interface ValidatedStringFactory<ValidatorT>
+export interface ValidatedStringFactory<ValidatorT>
 {
   /**
      The `try()` method returns the validated string if it's valid, or `undefined` if it isn't.
@@ -16,7 +16,7 @@ interface ValidatedStringFactory<ValidatorT>
 /**
  The `ValidatedString` is an internal [branded string type](https://news.ycombinator.com/item?id=40146751) used to enforce the validation. Consumers of this library shouldn't need to use it directly.
  */
-type ValidatedString<ValidatorT> = string & { readonly __ブランド: ValidatorT };
+export type ValidatedString<ValidatorT> = string & { readonly __ブランド: ValidatorT };
 
 /**
  The `ValidatedString.create()` function creates a factory and a type intended to be used to create new validated string types. It does a wee bit of TypeScript type system jiggery-pokery to make this usage work:

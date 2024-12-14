@@ -1,11 +1,17 @@
-import { ValidatedString } from './ValidatedString.ts';
+import { ValidatedString, type ValidatedStringFactory } from './ValidatedString.ts';
 
 const isAlphabetic = (s: string): boolean => /^[a-zA-Z]+$/.test(s);
 
+/**
+ Why JSRCompatibleFactory? See https://github.com/axhxrx/validated-string/issues/1 — consumers of this lib probably don't need to deal with this
+ */
 const JSRCompatibleFactory = ValidatedString.create(isAlphabetic, {
   name: 'AlphabeticString',
   description: 'must contain only letters (A-Z, a-z)',
 });
 
-export type AlphabeticString = typeof JSRCompatibleFactory.type;
-export const AlphabeticString = JSRCompatibleFactory.factory;
+const type: ValidatedString<typeof isAlphabetic> = JSRCompatibleFactory.type;
+const factory: ValidatedStringFactory<typeof isAlphabetic> = JSRCompatibleFactory.factory;
+
+export type AlphabeticString = typeof type;
+export const AlphabeticString = factory;
