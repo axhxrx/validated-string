@@ -17,5 +17,10 @@ const JSRCompatibleFactory = ValidatedString.create(
 const type: ValidatedString<typeof isPrometheusMetricNameWithoutColon> = JSRCompatibleFactory.type;
 const factory: ValidatedStringFactory<typeof isPrometheusMetricNameWithoutColon> = JSRCompatibleFactory.factory;
 
+/**
+ A validated string that represents a Prometheus metric name, but without the colon. See {@link ValidatedString} and {@link PrometheusMetricName} for more information.
+
+ @category Prometheus
+ */
 export type PrometheusMetricNameWithoutColon = typeof type;
 export const PrometheusMetricNameWithoutColon = factory;

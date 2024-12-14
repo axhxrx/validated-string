@@ -13,5 +13,8 @@ const JSRCompatibleFactory = ValidatedString.create(isAlphabeticOrUnderscore, {
 const type: ValidatedString<typeof isAlphabeticOrUnderscore> = JSRCompatibleFactory.type;
 const factory: ValidatedStringFactory<typeof isAlphabeticOrUnderscore> = JSRCompatibleFactory.factory;
 
+/**
+ A string that contains only characters `[a-zA-Z_]` (letters or underscores).
+ */
 export type AlphabeticOrUnderscoreString = typeof type;
 export const AlphabeticOrUnderscoreString = factory;

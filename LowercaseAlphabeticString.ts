@@ -13,5 +13,8 @@ const JSRCompatibleFactory = ValidatedString.create(isLowercaseAlpha, {
 const type: ValidatedString<typeof isLowercaseAlpha> = JSRCompatibleFactory.type;
 const factory: ValidatedStringFactory<typeof isLowercaseAlpha> = JSRCompatibleFactory.factory;
 
+/**
+ A string that contains only lowercase letters `[a-z]`.
+ */
 export type LowercaseAlphabeticString = typeof type;
 export const LowercaseAlphabeticString = factory;

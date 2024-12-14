@@ -15,6 +15,8 @@ const factory: ValidatedStringFactory<typeof isPrometheusMetricName> = JSRCompat
 
 /**
  A validated string that represents a Prometheus metric name. See {@link ValidatedString} for more information. Note that this might not really exactly match the rules for Prometheus metric names, but it's close enough for our purposes; namely, generating metrics — don't rely on this to *validate* Prometheus metric names, as it is based on a quick skim of the Prometheus docs.
+
+ @category Prometheus
  */
 export type PrometheusMetricName = typeof type;
 export const PrometheusMetricName = factory;
