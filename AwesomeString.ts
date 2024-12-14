@@ -1,10 +1,11 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isAwesome = (s: string) => s === 'awesome';
+const isAwesome = (s: string): boolean => s === 'awesome';
 
-const { factory, type } = ValidatedString.create(isAwesome);
-export type AwesomeString = typeof type;
-export const AwesomeString = factory;
+const JSRCompatibleFactory = ValidatedString.create(isAwesome);
+
+export type AwesomeString = typeof JSRCompatibleFactory.type;
+export const AwesomeString = JSRCompatibleFactory.factory;
 
 // Usage:
 const x = AwesomeString.try('awesome'); // AwesomeString | undefined

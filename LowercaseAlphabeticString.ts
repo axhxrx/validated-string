@@ -1,11 +1,11 @@
 import { ValidatedString } from './ValidatedString.ts';
 
-const isLowercaseAlpha = (s: string) => /^[a-z]+$/.test(s);
+const isLowercaseAlpha = (s: string): boolean => /^[a-z]+$/.test(s);
 
-const { factory, type } = ValidatedString.create(isLowercaseAlpha, {
+const JSRCompatibleFactory = ValidatedString.create(isLowercaseAlpha, {
   name: 'LowercaseAlphabeticString',
-  description: 'must contain only lowercase letters a-z',
+  description: 'must contain only lowercase letters (a-z)',
 });
 
-export type LowercaseAlphabeticString = typeof type;
-export const LowercaseAlphabeticString = factory;
+export type LowercaseAlphabeticString = typeof JSRCompatibleFactory.type;
+export const LowercaseAlphabeticString = JSRCompatibleFactory.factory;

@@ -33,7 +33,7 @@ Deno.test('LowercaseAlphabeticString - assert throws with descriptive message', 
   assertThrows(
     () => LowercaseAlphabeticString.assert('Hello123!'),
     Error,
-    'Invalid string did not pass validation: Supplied value "Hello123!" is not valid for validator "LowercaseAlphabeticString" (must contain only lowercase letters a-z).',
+    'Invalid string did not pass validation: Supplied value "Hello123!" is not valid for validator "LowercaseAlphabeticString" (must contain only lowercase letters (a-z)).',
   );
 });
 
