@@ -2,7 +2,7 @@ import { ValidatedString } from './ValidatedString.ts';
 
 const isPrometheusMetricNameWithoutColon = (s: string): boolean => /^[a-zA-Z_][a-zA-Z0-9_]*$/.test(s);
 
-const { factory, type } = ValidatedString.create(
+const JSRCompatibleFactory = ValidatedString.create(
   isPrometheusMetricNameWithoutColon,
   {
     name: 'PrometheusMetricNameWithoutColon',
@@ -10,5 +10,5 @@ const { factory, type } = ValidatedString.create(
   },
 );
 
-export type PrometheusMetricNameWithoutColon = typeof type;
-export const PrometheusMetricNameWithoutColon = factory;
+export type PrometheusMetricNameWithoutColon = typeof JSRCompatibleFactory.type;
+export const PrometheusMetricNameWithoutColon = JSRCompatibleFactory.factory;

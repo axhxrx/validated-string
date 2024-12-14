@@ -1,6 +1,8 @@
 # @axhxrx/validated-strings
 
-A library to help make runtime-validated strings, while still preserving a modicum of type-safety at build-time. Intended for specialized string types that are too complex to be modeled within the type system itself, e.g. "starts with an alphanumeric character and less than 1000 characters long, with at least three swear words", or "three words in German, separated by spaces", etc.
+A library to help make runtime-validated strings, but using branded types to preserve a modicum of type-safety and convenience at build-time.
+
+Intended for specialized string types that are too complex to be modeled within the type system itself, e.g. "starts with an alphanumeric character and less than 1000 characters long, with at least three swear words", or "three words in German, separated by spaces", etc.
 
 Example:
 
@@ -23,7 +25,7 @@ export type CowName = typeof type;
 const x = CowName.try('Bessie'); // x is 'Bessie'
 const y: CowName | undefined = CowName.try('not a cow name'); // y is undefined
 const z: CowName = CowName.assert('Bessie'); // z is 'Bessie'
-const ohFuck: never = CowName.assert('not a cow name'); // throws an error
+const ohFuck = CowName.assert('not a cow name'); // throws an error
 ```
 
 That's useful when you want to worry about the validation only in one spot, and lean on the type system elsewhere. E.g.:
