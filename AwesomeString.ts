@@ -1,11 +1,17 @@
-import { ValidatedString } from './ValidatedString.ts';
+import { ValidatedString, type ValidatedStringFactory } from './ValidatedString.ts';
 
 const isAwesome = (s: string): boolean => s === 'awesome';
 
+/**
+ Why JSRCompatibleFactory? See https://github.com/axhxrx/validated-string/issues/1 — consumers of this lib probably don't need to deal with this
+ */
 const JSRCompatibleFactory = ValidatedString.create(isAwesome);
 
-export type AwesomeString = typeof JSRCompatibleFactory.type;
-export const AwesomeString = JSRCompatibleFactory.factory;
+const type: ValidatedString<typeof isAwesome> = JSRCompatibleFactory.type;
+const factory: ValidatedStringFactory<typeof isAwesome> = JSRCompatibleFactory.factory;
+
+export type AwesomeString = typeof type;
+export const AwesomeString = factory;
 
 // Usage:
 const x = AwesomeString.try('awesome'); // AwesomeString | undefined
