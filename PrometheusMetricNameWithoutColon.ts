@@ -9,8 +9,7 @@ const JSRCompatibleFactory = ValidatedString.create(
   isPrometheusMetricNameWithoutColon,
   {
     name: 'PrometheusMetricNameWithoutColon',
-    description:
-      'must start with a letter or underscore, followed by letters, digits, or underscores',
+    description: 'must start with a letter or underscore, followed by letters, digits, or underscores',
   },
 );
 

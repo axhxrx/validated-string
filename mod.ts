@@ -3,7 +3,6 @@ export { ValidatedString } from './ValidatedString.ts';
 export { AlphabeticOrUnderscoreOrHyphenString } from './AlphabeticOrUnderscoreOrHyphenString.ts';
 export { AlphabeticOrUnderscoreString } from './AlphabeticOrUnderscoreString.ts';
 export { AlphabeticString } from './AlphabeticString.ts';
-export { AwesomeString } from './AwesomeString.ts';
 export { LowercaseAlphabeticString } from './LowercaseAlphabeticString.ts';
 export { PrometheusMetricName } from './PrometheusMetricName.ts';
 export { PrometheusMetricNameWithoutColon } from './PrometheusMetricNameWithoutColon.ts';

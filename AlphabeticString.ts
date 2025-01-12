@@ -13,7 +13,6 @@ const JSRCompatibleFactory = ValidatedString.create(isAlphabetic, {
 const type: ValidatedString<typeof isAlphabetic> = JSRCompatibleFactory.type;
 const factory: ValidatedStringFactory<typeof isAlphabetic> = JSRCompatibleFactory.factory;
 
-
 /**
  A string that contains only letters `[a-zA-Z]`.
  */

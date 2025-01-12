@@ -15,7 +15,6 @@ const JSRCompatibleFactory = ValidatedString.create(
 const type: ValidatedString<typeof isAlphabeticOrUnderscoreOrHyphen> = JSRCompatibleFactory.type;
 const factory: ValidatedStringFactory<typeof isAlphabeticOrUnderscoreOrHyphen> = JSRCompatibleFactory.factory;
 
-
 /**
  A string that contains only characters `[a-zA-Z_-]` (letters, underscores, or hyphens).
  */
